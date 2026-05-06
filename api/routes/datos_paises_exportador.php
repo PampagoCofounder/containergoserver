@@ -21,9 +21,7 @@ try {
     }
     
 
-    echo json_encode([
-        "paises" => $paises
-    ]);
+    echo json_encode($paises);
 
 
 } catch (PDOException $e) {
