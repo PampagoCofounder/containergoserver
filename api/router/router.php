@@ -42,7 +42,9 @@ $routes = [
         "riesgo" => "routes/riesgopais.php",
         "datoscomex" => "routes/datos_comex.php",
         "empresa" => "routes/get_empresa.php",
-        "empresa_comercio" => "routes/get_empresa_comercio.php"
+        "empresa_comercio" => "routes/get_empresa_comercio.php",
+        "paises_exportadores" => "routes/datos_paises_exportador.php"
+
     ]
     
 ];
