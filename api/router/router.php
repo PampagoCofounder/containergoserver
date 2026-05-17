@@ -34,6 +34,7 @@ $routes = [
     "POST" => [
         "login" => "routes/login.php",
         "upload-clientes"=> "routes/upload_clientes.php",
+        "solicitud_comex" => "routes/solicitud_comex.php",
 
     ],
     "GET" => [
@@ -43,7 +44,9 @@ $routes = [
         "datoscomex" => "routes/datos_comex.php",
         "empresa" => "routes/get_empresa.php",
         "empresa_comercio" => "routes/get_empresa_comercio.php",
-        "paises_exportadores" => "routes/datos_paises_exportador.php"
+        "paises_exportadores" => "routes/datos_paises_exportador.php",
+        "dolar_clp" => "routes/moneda_chilena.php",
+        "estado_comercializacion" => "routes/datos_comercializacion.php"
 
     ]
     
