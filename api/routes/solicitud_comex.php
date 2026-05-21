@@ -3,7 +3,6 @@
 require_once __DIR__ . "/../config/database.php";
 
 header("Content-Type: application/json");
-header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 
 $db = (new Database())->connect();
@@ -18,9 +17,14 @@ try {
 
     // Validar datos
     if (
-        !isset($data["nombre"]) ||
+        !isset($data["razon_social"]) ||
+        !isset($data["nombre_comercial"]) ||
         !isset($data["cuit"]) ||
-        !isset($data["mensaje"])
+        !isset($data["condicion_iva"]) ||
+        !isset($data["domicilio_fiscal"]) ||
+        !isset($data["telefono"]) ||
+        !isset($data["email"]) ||
+        !isset($data["observacion"])
     ) {
 
         http_response_code(400);
@@ -32,24 +36,34 @@ try {
         exit;
     }
 
-    $nombre = $data["nombre"];
+    $razon_social = $data["razon_social"];
+    $nombre_comercial = $data["nombre_comercial"];
     $cuit = $data["cuit"];
-    $mensaje = $data["mensaje"];
+    $condicion_iva = $data["condicion_iva"];
+    $domicilio_fiscal = $data["domicilio_fiscal"];
+    $telefono = $data["telefono"];
+    $email = $data["email"];
+    $observacion = $data["observacion"];
 
     // Insertar en tabla solicitud
     $sql = "
         INSERT INTO solicitud_comex
-        (nombre, cuit, mensaje)
+        (razon_social, nombre_comercial, cuit, condicion_iva, domicilio_fiscal, telefono,email, observacion)
         VALUES
-        (:nombre, :cuit, :mensaje)
+        (:razon_social, :nombre_comercial, :cuit, :condicion_iva, :domicilio_fiscal, :telefono, :email, :observacion)
     ";
 
     $stmt = $db->prepare($sql);
 
     $stmt->execute([
-        ":nombre" => $nombre,
+        ":razon_social" => $razon_social,
+        ":nombre_comercial" => $nombre_comercial,
         ":cuit" => $cuit,
-        ":mensaje" => $mensaje
+        ":condicion_iva" => $condicion_iva,
+        ":domicilio_fiscal" => $domicilio_fiscal,
+        ":telefono"=> $telefono,
+        ":email" => $email,
+        ":observacion" => $observacion
     ]);
 
     echo json_encode([

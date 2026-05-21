@@ -46,7 +46,8 @@ $routes = [
         "empresa_comercio" => "routes/get_empresa_comercio.php",
         "paises_exportadores" => "routes/datos_paises_exportador.php",
         "dolar_clp" => "routes/moneda_chilena.php",
-        "estado_comercializacion" => "routes/datos_comercializacion.php"
+        "estado_comercializacion" => "routes/datos_comercializacion.php",
+        "obtener_productos" => "routes/get_productos_comercializacion.php",
 
     ]
     
