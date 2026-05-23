@@ -35,6 +35,7 @@ $routes = [
         "login" => "routes/login.php",
         "upload-clientes"=> "routes/upload_clientes.php",
         "solicitud_comex" => "routes/solicitud_comex.php",
+        "enviar_productos" => "routes/post_productos_comercializacion.php",
 
     ],
     "GET" => [
@@ -49,6 +50,12 @@ $routes = [
         "estado_comercializacion" => "routes/datos_comercializacion.php",
         "obtener_productos" => "routes/get_productos_comercializacion.php",
 
+    ],
+    "DELETE" => [
+        "eliminar_productos" => "routes/delete_productos_comercializacion.php",
+    ],
+    "PUT" => [
+        "actualizar_productos" => "routes/put_productos_comercializacion.php"
     ]
     
 ];
