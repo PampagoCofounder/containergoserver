@@ -1,5 +1,6 @@
 <?php
 
+use Firebase\JWT\ExpiredException;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
@@ -9,10 +10,14 @@ function validarJWT()
 
     if (!isset($headers["Authorization"])) {
         http_response_code(401);
-        echo json_encode(["error" => "Token requerido"]);
+        echo json_encode([
+            "success"=> false,
+            "error" => "Token requerido"
+        ]);
         exit();
     }
 
+    //Obtener token
     $token = str_replace("Bearer ", "", $headers["Authorization"]);
 
     try {
@@ -22,9 +27,26 @@ function validarJWT()
         );
 
         return (array) $decoded;
-    } catch (Exception $e) {
+    } catch (ExpiredException $e) {
         http_response_code(401);
-        echo json_encode(["error" => "Token inválido"]);
+        echo json_encode([
+            "success" => false,
+            "expired" => true,
+            "error" => "La sesion expiro"
+        ]);
+        exit();
+    }
+
+    //token invalido
+    catch (Exception $e){
+        http_response_code(401);
+
+        echo json_encode([
+            "success" => false,
+            "expired" => false,
+            "error" => "Token inválido"
+        ]);
+
         exit();
     }
 }

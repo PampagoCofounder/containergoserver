@@ -36,6 +36,8 @@ $routes = [
         "upload-clientes"=> "routes/upload_clientes.php",
         "solicitud_comex" => "routes/solicitud_comex.php",
         "enviar_productos" => "routes/post_productos_comercializacion.php",
+        "enviar_proveedores" => "routes/post_proveedores_comercializacion.php",
+        "enviar_distribuidores" => "routes/post_distribuidores_comercializacion.php",
 
     ],
     "GET" => [
@@ -49,13 +51,19 @@ $routes = [
         "dolar_clp" => "routes/moneda_chilena.php",
         "estado_comercializacion" => "routes/datos_comercializacion.php",
         "obtener_productos" => "routes/get_productos_comercializacion.php",
+        "obtener_proveedor" => "routes/get_proveedores_comercializacion.php",
+        "obtener_distribuidor" => "routes/get_distribuidores_comercializacion.php",
 
     ],
     "DELETE" => [
         "eliminar_productos" => "routes/delete_productos_comercializacion.php",
+        "eliminar_proveedores" => "routes/delete_proveedores_comercializacion.php",
+        "eliminar_distribuidores" => "routes/delete_distribuidores_comercializacion.php"
     ],
     "PUT" => [
-        "actualizar_productos" => "routes/put_productos_comercializacion.php"
+        "actualizar_productos" => "routes/put_productos_comercializacion.php",
+        "actualizar_proveedores" => "routes/put_proveedores_comercializacion.php",
+        "actualizar_distribuidores" => "routes/put_distribuidores_comercializacion.php",
     ]
     
 ];

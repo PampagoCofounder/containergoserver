@@ -18,7 +18,7 @@ class Database
 {
     public function connect()
     {
-           
+        
         $host = "localhost";
         $db = "c2761701_pampadb";
         $user = "c2761701_pampadb";
