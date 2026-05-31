@@ -38,6 +38,7 @@ $routes = [
         "enviar_productos" => "routes/post_productos_comercializacion.php",
         "enviar_proveedores" => "routes/post_proveedores_comercializacion.php",
         "enviar_distribuidores" => "routes/post_distribuidores_comercializacion.php",
+        "chatbot"=> "routes/post_chatbot.php",
 
     ],
     "GET" => [
