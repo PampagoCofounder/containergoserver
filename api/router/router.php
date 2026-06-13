@@ -39,6 +39,7 @@ $routes = [
         "enviar_proveedores" => "routes/post_proveedores_comercializacion.php",
         "enviar_distribuidores" => "routes/post_distribuidores_comercializacion.php",
         "chatbot"=> "routes/post_chatbot.php",
+        "enviar_documentacion" => "routes/post_enviar_documentacion.php"
 
     ],
     "GET" => [
@@ -54,6 +55,8 @@ $routes = [
         "obtener_productos" => "routes/get_productos_comercializacion.php",
         "obtener_proveedor" => "routes/get_proveedores_comercializacion.php",
         "obtener_distribuidor" => "routes/get_distribuidores_comercializacion.php",
+        "obtener_cartera_clientes" => "routes/get_cartera_clientes.php",
+        "obtener_documentacion" => "routes/get_enviar_documentacion.php",
 
     ],
     "DELETE" => [

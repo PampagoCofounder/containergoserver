@@ -17,6 +17,7 @@ try {
     }
 
     echo json_encode([
+        "id" => $row["id"],
         "nombre_empresa" => $row["nombre_empresa"],
         "CUIT" => $row["CUIT"],
         "actividad" => $row["actividad"],
